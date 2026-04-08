@@ -14,7 +14,7 @@ Andrej Karpathy's [autoresearch](https://github.com/karpathy/autoresearch) is on
 
 Within days of its March 2026 release, the repository crossed 39,000 stars. The developer community response was immediate and intense — not because autoresearch automates hyperparameter tuning (many tools do that), but because it demonstrates something more fundamental: **natural selection, applied to code, produces genuine improvement without human intervention.**
 
-This essay explores the structural parallels between autoresearch and the [Rotifer Protocol](https://rotifer.dev), a universal evolution framework for AI agents. We argue that autoresearch represents a brilliant *vertical* demonstration of evolutionary computing, while the Rotifer Protocol provides the *horizontal* infrastructure to generalize this pattern to all agent capabilities — and, crucially, to make discoveries propagate across agents rather than remaining isolated in individual experiments.
+This essay explores the structural parallels between autoresearch and the [Rotifer Protocol](https://rotifer.dev), an open-source evolution framework for AI agents. We argue that autoresearch represents a brilliant *vertical* demonstration of evolutionary computing, while the Rotifer Protocol provides the *horizontal* infrastructure to generalize this pattern to all agent capabilities — and, crucially, to make discoveries propagate across agents rather than remaining isolated in individual experiments.
 
 ---
 
