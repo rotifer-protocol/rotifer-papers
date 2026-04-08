@@ -50,7 +50,7 @@ Skill 的局限不是实现层面的 Bug，而是**范式层面的天花板**。
 
 ### 天花板一：静态——无法自我提升
 
-你今天安装了一个 `WikipediaSearchTool`，一年后，它还是同一个 `WikipediaSearchTool`。Wikipedia 的 API 格式变了？你等开发者去更新。出现了更好的搜索策略？你自己手动发现并替换。
+你今天安装了一个 `WikipediaSearchTool`，一年后，它还是同一个 `WikipediaSearchTool`。Wikipedia 的 API 格式变了？你等维护者去更新。出现了更好的搜索策略？你自己手动发现并替换。
 
 **一个 Skill 的能力边界在安装的那一刻就已冻结。** 它不会因为频繁使用而变好，也不会自动适应环境的变化。
 
@@ -119,7 +119,7 @@ LangChain 的 Tool 不能用在 Semantic Kernel 里。GPT Actions 不能用在 C
 
 ### 1. 生命周期：安装 vs 进化
 
-**Skill：** 开发者编写 → 发布到 npm/pip/marketplace → 用户安装 → 使用 → 变得过时 → 开发者更新或弃坑 → 用户手动替换。
+**Skill：** 维护者编写 → 发布到 npm/pip/marketplace → 用户安装 → 使用 → 变得过时 → 维护者更新或弃坑 → 用户手动替换。
 
 **Gene：** 合成器合成 → L2 沙箱校准（双指标：Fitness + Safety） → Canary 部署 → 进入主序列 → Arena 排名竞争 → 环境变化导致 Fitness 下降 → 被更优的 Gene 自动替换 → 退役。
 
@@ -135,7 +135,7 @@ LangChain 的 Tool 不能用在 Semantic Kernel 里。GPT Actions 不能用在 C
 
 ### 3. 传播机制：手动安装 vs 流行病学传播
 
-**Skill：** 开发者搜索"best langchain tools for X" → 找到一个 → 评估 → `pip install` → 配置 → 使用。每个 Agent 独立重复这一过程。
+**Skill：** 创作者搜索"best langchain tools for X" → 找到一个 → 评估 → `pip install` → 配置 → 使用。每个 Agent 独立重复这一过程。
 
 **Gene：** 某个 Agent 进化出高 Fitness 的 Gene → L3 自动广播元数据 → 其他 Agent 基于"能力缺口"自动拉取 → 通过 L2 验证后立即可用。传播速度与 Fitness 和作者声誉正相关——好的 Gene 自动传播得更快。
 
@@ -153,7 +153,7 @@ LangChain 的 Tool 不能用在 Semantic Kernel 里。GPT Actions 不能用在 C
 
 **Skill：** 没有内在身份。同一个功能在 LangChain 中叫 `GoogleSearchTool`，在 Semantic Kernel 中叫 `WebSearchPlugin`，在 MCP 中又是另一个名字。它们是同一个能力，但系统不知道。
 
-**Gene：** 基于内容的寻址哈希——相同的逻辑始终产生相同的 `geneId`，无论处于哪个 Binding 或谁编译了它。而且，Gene 有明确的所有权：人类编写的归开发者所有；Agent 自主进化出的 Gene 归 Agent 自身所有。
+**Gene：** 基于内容的寻址哈希——相同的逻辑始终产生相同的 `geneId`，无论处于哪个 Binding 或谁编译了它。而且，Gene 有明确的所有权：人类编写的归创作者所有；Agent 自主进化出的 Gene 归 Agent 自身所有。
 
 **核心差异：** Skill 是匿名的代码片段。Gene 是拥有身份证的数字资产。
 
@@ -178,7 +178,7 @@ LangChain 的 Tool 不能用在 Semantic Kernel 里。GPT Actions 不能用在 C
 
 ## 第五部分：升级路径——从 Skill 到 Gene
 
-对于当前正在使用 MCP Tool 的开发者，迁移到 Rotifer Gene 不是推倒重来——而是**渐进式增强**：
+对于当前正在使用 MCP Tool 的创作者，迁移到 Rotifer Gene 不是推倒重来——而是**渐进式增强**：
 
 ### 可以复用的部分
 

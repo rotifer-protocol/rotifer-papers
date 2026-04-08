@@ -50,7 +50,7 @@ Skill's limitations are not implementation-level bugs; they are **paradigm-level
 
 ### Ceiling 1: Static — They Don't Improve on Their Own
 
-You install a `WikipediaSearchTool` today. A year later, it's still the same `WikipediaSearchTool`. Wikipedia's API format changed? You wait for the developer to update it. A better search strategy emerged? You manually discover and replace it yourself.
+You install a `WikipediaSearchTool` today. A year later, it's still the same `WikipediaSearchTool`. Wikipedia's API format changed? You wait for the maintainer to update it. A better search strategy emerged? You manually discover and replace it yourself.
 
 **A Skill's capability boundary is frozen the moment it is installed.** It doesn't get better from frequent use, nor does it automatically adapt to environmental changes.
 
@@ -119,7 +119,7 @@ This is not two incompatible paradigms. It is two stages on the same evolutionar
 
 ### 1. Lifecycle: Installation vs Evolution
 
-**Skill:** Developer writes → publishes to npm/pip/marketplace → user installs → uses → becomes outdated → developer updates or abandons → user manually replaces.
+**Skill:** Maintainer writes → publishes to npm/pip/marketplace → user installs → uses → becomes outdated → maintainer updates or abandons → user manually replaces.
 
 **Gene:** Synthesizer synthesizes → L2 sandbox calibration (dual metrics: Fitness + Safety) → Canary deployment → admitted to main sequence → Arena ranking competition → environmental change causes fitness decline → automatically replaced by a superior Gene → retired.
 
@@ -135,7 +135,7 @@ This is not two incompatible paradigms. It is two stages on the same evolutionar
 
 ### 3. Propagation Mechanism: Manual Installation vs Epidemiological Spread
 
-**Skill:** Developer Googles "best langchain tools for X" → finds one → evaluates → `pip install` → configures → uses. Each Agent independently repeats this process.
+**Skill:** Creator searches "best langchain tools for X" → finds one → evaluates → `pip install` → configures → uses. Each Agent independently repeats this process.
 
 **Gene:** An Agent evolves a high-fitness Gene → L3 automatically broadcasts metadata → other Agents pull it automatically based on "capability gaps" → available immediately after L2 verification. Propagation speed correlates positively with fitness and author reputation — good Genes spread faster automatically.
 
@@ -153,7 +153,7 @@ This is not two incompatible paradigms. It is two stages on the same evolutionar
 
 **Skill:** No inherent identity. The same functionality is called `GoogleSearchTool` in LangChain, `WebSearchPlugin` in Semantic Kernel, and yet another name in MCP. They are the same capability, but the system doesn't know that.
 
-**Gene:** Content-addressed hashing — identical logic always produces the same `geneId`, regardless of which binding it's in or who compiled it. Moreover, Genes have explicit ownership: human-authored ones belong to the developer; Genes autonomously evolved by an Agent belong to the Agent itself.
+**Gene:** Content-addressed hashing — identical logic always produces the same `geneId`, regardless of which binding it's in or who compiled it. Moreover, Genes have explicit ownership: human-authored ones belong to the creator; Genes autonomously evolved by an Agent belong to the Agent itself.
 
 **Core difference:** Skills are anonymous code snippets. Genes are digital assets with identity cards.
 
@@ -178,7 +178,7 @@ When one Agent detects a malicious Gene, the entire network gains immunity withi
 
 ## Part V: The Upgrade Path — From Skill to Gene
 
-For a developer currently using MCP Tools, migrating to Rotifer Genes is not a tear-down-and-rebuild — it's a **progressive enhancement**:
+For a creator currently using MCP Tools, migrating to Rotifer Genes is not a tear-down-and-rebuild — it's a **progressive enhancement**:
 
 ### What You Can Reuse
 

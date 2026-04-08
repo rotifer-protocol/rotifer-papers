@@ -2,7 +2,7 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-Published writings on the Rotifer Protocol — a universal evolution framework for autonomous software agents.
+Published writings on the Rotifer Protocol — an open-source, universal evolution framework for AI agents.
 
 ## Articles
 
@@ -10,7 +10,7 @@ Published writings on the Rotifer Protocol — a universal evolution framework f
 
 A deep comparison between Rotifer Genes and conventional Agent Skills (MCP Tools). Explains the paradigm shift from a static tool model to a living, evolving biological model.
 
-**Audience:** AI/Agent developers, MCP community, technical decision-makers
+**Audience:** AI/Agent creators, MCP community, technical decision-makers
 
 ### [Philosophy Whitepaper: Digital Life on a Continuum](./rotifer-philosophy-whitepaper.md)
 
