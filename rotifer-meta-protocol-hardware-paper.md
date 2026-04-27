@@ -12,10 +12,8 @@
 
 **Protocol:** Rotifer Protocol Specification
 
-**Companion Papers:**
+**Companion Paper:**
 - *The Philosophy of Digital Evolution* (v1.2, 2026) — philosophical grounding
-- *The Rotifer Fitness Evolution Chain* (v1.0, 2026) — multi-layer fitness architecture
-- *The Rotifer Evaluation Methodology* (v1.0, 2026) — protocol-level evaluation framework
 
 **License:** CC BY-SA 4.0
 
@@ -152,9 +150,9 @@ A protocol that does not distinguish these three sentences will let any product 
 
 ### 3.2 Epiplexity in One Paragraph
 
-Recent information-theoretic work makes the distinction precise. Finzi, Qiu, Jiang, Izmailov, Kolter, and Wilson [9] introduce the notion of *epiplexity*: structural information available to a computationally bounded observer. Their formal framework defines epiplexity as a function of both the data and the observer's computational budget. Information that requires unbounded computation to extract is not epiplexity, however much entropy it contains. Two observers viewing the same environment with different computational budgets extract different reachable structures from it. Not slower. Different. Some reachable structure for one budget is not approximately reachable for another budget — it is structurally absent.
+Recent information-theoretic work makes the distinction precise. Finzi, Qiu, Jiang, Izmailov, Kolter, and Wilson [7] introduce the notion of *epiplexity*: structural information available to a computationally bounded observer. Their formal framework defines epiplexity as a function of both the data and the observer's computational budget. Information that requires unbounded computation to extract is not epiplexity, however much entropy it contains. Two observers viewing the same environment with different computational budgets extract different reachable structures from it. Not slower. Different. Some reachable structure for one budget is not approximately reachable for another budget — it is structurally absent.
 
-The companion paper [12] develops this distinction in the context of digital speciation. The key implication for the present discussion is operational: capability is not a property of a problem; it is a property of the pair (problem, observer). Two device generations facing the same problem are not running the same race at different speeds; they are running races whose finish lines are in different places.
+The companion paper [10] develops this distinction in the context of digital speciation. The key implication for the present discussion is operational: capability is not a property of a problem; it is a property of the pair (problem, observer). Two device generations facing the same problem are not running the same race at different speeds; they are running races whose finish lines are in different places.
 
 ### 3.3 What This Implies for Hardware Generations
 
@@ -496,34 +494,30 @@ The protocol's contribution to distributed intelligence is not a product. It is 
 
 [2] Rotifer Foundation. (2026). *The Philosophy of Digital Evolution* (v1.2). Rotifer Foundation. CC BY-SA 4.0.
 
-[3] Rotifer Foundation. (2026). *The Rotifer Fitness Evolution Chain* (v1.0). Rotifer Foundation. CC BY-SA 4.0.
+[3] Berners-Lee, T., Fielding, R., & Frystyk, H. (1996). *Hypertext Transfer Protocol — HTTP/1.0* (RFC 1945). Internet Engineering Task Force.
 
-[4] Rotifer Foundation. (2026). *The Rotifer Evaluation Methodology* (v1.0). Rotifer Foundation. CC BY-SA 4.0.
+[4] Postel, J. (1981). *Transmission Control Protocol* (RFC 793). Internet Engineering Task Force.
 
-[5] Berners-Lee, T., Fielding, R., & Frystyk, H. (1996). *Hypertext Transfer Protocol — HTTP/1.0* (RFC 1945). Internet Engineering Task Force.
+[5] Sabt, M., Achemlal, M., & Bouabdallah, A. (2015). Trusted Execution Environment: What it is, and what it is not. *IEEE Trustcom/BigDataSE/ISPA*, 1, 57–64.
 
-[6] Postel, J. (1981). *Transmission Control Protocol* (RFC 793). Internet Engineering Task Force.
+[6] Costan, V., & Devadas, S. (2016). *Intel SGX Explained*. IACR Cryptology ePrint Archive, Report 2016/086.
 
-[7] Sabt, M., Achemlal, M., & Bouabdallah, A. (2015). Trusted Execution Environment: What it is, and what it is not. *IEEE Trustcom/BigDataSE/ISPA*, 1, 57–64.
+[7] Finzi, M., Qiu, S., Jiang, Y., Izmailov, P., Kolter, J. Z., & Wilson, A. G. (2026). From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence. *arXiv preprint arXiv:2601.03220*.
 
-[8] Costan, V., & Devadas, S. (2016). *Intel SGX Explained*. IACR Cryptology ePrint Archive, Report 2016/086.
+[8] Polanyi, M. (1966). *The Tacit Dimension*. University of Chicago Press.
 
-[9] Finzi, M., Qiu, S., Jiang, Y., Izmailov, P., Kolter, J. Z., & Wilson, A. G. (2026). From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence. *arXiv preprint arXiv:2601.03220*.
+[9] Hassabis, D. (2024). *Accelerating Scientific Discovery with AI*. 2024 Nobel Prize Lecture in Chemistry, December 8, 2024. Stockholm, Sweden.
 
-[10] Polanyi, M. (1966). *The Tacit Dimension*. University of Chicago Press.
+[10] Rotifer Foundation. (2026). *The Philosophy of Digital Evolution* (v1.2), §2.4 *Information-Theoretic Foundations: Epiplexity and the Computationally Bounded Observer*.
 
-[11] Hassabis, D. (2024). *Accelerating Scientific Discovery with AI*. 2024 Nobel Prize Lecture in Chemistry, December 8, 2024. Stockholm, Sweden.
+[11] Cover, T. M., & Thomas, J. A. (2006). *Elements of Information Theory* (2nd ed.). Wiley-Interscience.
 
-[12] Rotifer Foundation. (2026). *The Philosophy of Digital Evolution* (v1.2), §2.4 *Information-Theoretic Foundations: Epiplexity and the Computationally Bounded Observer*.
+[12] Mayr, E. (2001). *What Evolution Is*. Basic Books.
 
-[13] Cover, T. M., & Thomas, J. A. (2006). *Elements of Information Theory* (2nd ed.). Wiley-Interscience.
-
-[14] Mayr, E. (2001). *What Evolution Is*. Basic Books.
-
-[15] Anderson, R. (2020). *Security Engineering: A Guide to Building Dependable Distributed Systems* (3rd ed.). Wiley.
+[13] Anderson, R. (2020). *Security Engineering: A Guide to Building Dependable Distributed Systems* (3rd ed.). Wiley.
 
 ---
 
 **© 2026 Rotifer Foundation. This document is released under CC BY-SA 4.0.**
 
-**Companion Materials:** The Philosophy of Digital Evolution · The Rotifer Fitness Evolution Chain · The Rotifer Evaluation Methodology · Rotifer Protocol Specification.
+**Companion Materials:** The Philosophy of Digital Evolution · Rotifer Protocol Specification.

@@ -12,7 +12,7 @@
 
 **Protocol:** Rotifer Protocol Specification
 
-> **v1.2 Amendment Note (2026-04-25):** Added §2.4 *Information-Theoretic Foundations: Epiplexity and the Computationally Bounded Observer* — a short philosophical introduction to the information-theoretic grounding of digital speciation. Detailed technical treatments are deferred to two companion papers (forthcoming): *Rotifer Fitness Evolution Chain* and *Rotifer Evaluation Methodology*. No prior content has been modified; the rest of the whitepaper remains as released in v1.1.
+> **v1.2 Amendment Note (2026-04-25):** Added §2.4 *Information-Theoretic Foundations: Epiplexity and the Computationally Bounded Observer* — a short philosophical introduction to the information-theoretic grounding of digital speciation. Detailed technical and methodological treatments are deferred to future work. No prior content has been modified; the rest of the whitepaper remains as released in v1.1.
 
 ---
 
@@ -218,7 +218,7 @@ Three independent intellectual traditions converge on the same conclusion. **Has
 
 The convergence matters because it tells us the protocol's central design constraint is not arbitrary. Honest protocol design must acknowledge that evolutionary success, learnable structure, and digital speciation are all artifacts of computationally bounded observers — not of idealized rational agents. This is the information-theoretic foundation on which the philosophical claims of Sections 2.1–2.3 rest, and it is one reason the protocol can welcome speciation as a sign of health rather than fear it as a sign of fragmentation.
 
-A more technical treatment of how the protocol's fitness landscape decomposes across observer levels is given in the companion paper *Rotifer Fitness Evolution Chain* (forthcoming), and the practical evaluation framework that operationalizes these distinctions appears in *Rotifer Evaluation Methodology* (forthcoming). For the philosophical reader, the takeaway is simple: the diversity celebrated in §§2.1–2.3 is not noise — it is structure that is real for some observers and absent for others, all at once.
+A more technical treatment of how the protocol's fitness landscape decomposes across observer levels, and the practical evaluation framework that operationalizes these distinctions, is left to future work. For the philosophical reader, the takeaway is simple: the diversity celebrated in §§2.1–2.3 is not noise — it is structure that is real for some observers and absent for others, all at once.
 
 ---
 
@@ -425,8 +425,7 @@ The philosophy of the Rotifer Protocol is the same: rather than pursuing the mos
 - [Rotifer Protocol Specification](https://github.com/rotifer-protocol/rotifer-spec) — Core Protocol Specification
 - [Architecture Decision Records](https://github.com/rotifer-protocol/rotifer-playground/blob/main/docs/architecture-decisions.md) — Selected public ADRs
 - [From Skill to Gene](./rotifer-gene-vs-skill.md) — Paradigm Comparison between Genes and Skills
-- [Rotifer Fitness Evolution Chain](./rotifer-fitness-evolution-chain.md) *(forthcoming, Phase A Day 4-5)* — Technical treatment of how the fitness landscape decomposes across observer levels (F(g) → F_meta → F_world)
-- [Rotifer Evaluation Methodology](./rotifer-evaluation-methodology.md) *(forthcoming, Phase A Day 6-7)* — Practical 4-dimension × 5-discipline framework for protocol-level evaluation
+- [Rotifer Protocol — The Meta-Protocol for Distributed Intelligence Emergence](./rotifer-meta-protocol-hardware-paper.md) — Companion whitepaper. Where capability lives, and how hardware earns the right to run it.
 
 ---
 
