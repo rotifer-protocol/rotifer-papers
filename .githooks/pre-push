@@ -1,17 +1,28 @@
 #!/bin/sh
-# Pre-push History Audit Guard (ADR-107 D3)
-# PURPOSE: Prevent sensitive content from leaking through git history.
-# LOCATION: Version-controlled in .githooks/ — deletion is visible in git status.
-# WARNING: Do NOT delete or modify this file. This is a security hook.
+# Pre-push Guard
 #
-# Source: Event #10 — Gemini Deep Research extracted 6,909-line internal spec
-# from GitHub commit history even though HEAD was clean.
+# Two stages:
+#   Stage 1 — History Audit (ADR-107 D3)
+#     Block any commit in the push range that introduces sensitive
+#     file paths (internal/, .env, secret, credential, spec-internal).
+#     Source: Event #10 — Gemini Deep Research extracted 6,909-line
+#     internal spec from GitHub history while HEAD was clean.
+#
+#   Stage 2 — Public Spec §X.Y Reference Check (ADR-270 D2)
+#     Run scripts/verify-spec-refs.sh against HEAD .md files. Block
+#     pushing papers that cite spec sections not present in the
+#     published executive summary.
+#
+# LOCATION: Version-controlled in .githooks/ — deletion is visible
+#           in git status.
+# WARNING: Do NOT delete or modify this file. This is a security hook.
 
 REMOTE="$1"
 URL="$2"
 
 SENSITIVE_FILE_PATTERNS="internal/|\.env$|credential|secret|spec-internal"
 
+# ───── Stage 1: History Audit ─────
 while read local_ref local_sha remote_ref remote_sha; do
   if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
     RANGE="$local_sha"
@@ -34,5 +45,17 @@ while read local_ref local_sha remote_ref remote_sha; do
     exit 1
   fi
 done
+
+# ───── Stage 2: Public Spec §X.Y Reference Check ─────
+SCRIPT="$(git rev-parse --show-toplevel)/scripts/verify-spec-refs.sh"
+if [ -x "$SCRIPT" ]; then
+  if ! "$SCRIPT"; then
+    # Script prints its own diagnostic banner.
+    exit 1
+  fi
+else
+  echo "⚠️  scripts/verify-spec-refs.sh missing or not executable —"
+  echo "    spec-refs check skipped. Restore the file (ADR-270 D2)."
+fi
 
 exit 0
