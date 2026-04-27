@@ -1,14 +1,18 @@
 # The Philosophy of Digital Evolution
 
-**Version:** 1.1
+**Version:** 1.2
 
 **Date:** February 19, 2026
+
+**Last Amended:** April 25, 2026
 
 **Author:** Rotifer Foundation
 
 **Status:** Draft
 
 **Protocol:** Rotifer Protocol Specification
+
+> **v1.2 Amendment Note (2026-04-25):** Added §2.4 *Information-Theoretic Foundations: Epiplexity and the Computationally Bounded Observer* — a short philosophical introduction to the information-theoretic grounding of digital speciation. Detailed technical treatments are deferred to two companion papers (forthcoming): *Rotifer Fitness Evolution Chain* and *Rotifer Evaluation Methodology*. No prior content has been modified; the rest of the whitepaper remains as released in v1.1.
 
 ---
 
@@ -24,6 +28,7 @@
   - [2.1 From Biology to Digital Ecology](#21-from-biology-to-digital-ecology)
   - [2.2 Phenotypic Divergence and IR Unity](#22-phenotypic-divergence-and-ir-unity)
   - [2.3 The Translation Layer: Protocol Adapters as Inter-Species Bridges](#23-the-translation-layer-protocol-adapters-as-inter-species-bridges)
+  - [2.4 Information-Theoretic Foundations: Epiplexity and the Computationally Bounded Observer](#24-information-theoretic-foundations-epiplexity-and-the-computationally-bounded-observer)
 - [3. The Endgame of Evolution](#3-the-endgame-of-evolution)
   - [3.1 Two Sources of Complexity](#31-two-sources-of-complexity)
   - [3.2 Layered Interpretability: Nature's Strategy](#32-layered-interpretability-natures-strategy)
@@ -200,6 +205,20 @@ Rotifer Protocol adapters serve a dual mission:
 2. **Cross-"species" translation:** Bridging communication between phenotypically divergent Rotifer Agents across different bindings
 
 The adapters themselves participate in Arena competition as Genes—superior translation algorithms win out in competition. This means the protocol's "inter-species communication capability" improves automatically as the ecosystem develops, without central planning.
+
+### 2.4 Information-Theoretic Foundations: Epiplexity and the Computationally Bounded Observer
+
+The biological speciation analogy in Sections 2.1–2.3 describes *what* diverges (phenotypes, behaviors, "personalities") but leaves a deeper question unanswered: **what determines the boundary of a learnable digital species?** Why should an Agent on an Edge binding genuinely develop capabilities that an Agent on a Cloud binding cannot — beyond mere accidental drift?
+
+Recent work in information theory provides a formal answer. Finzi, Qiu, Jiang, Izmailov, Kolter, and Wilson (2026) observe that classical Shannon entropy and Kolmogorov complexity both presuppose observers with *unlimited* computational capacity. Real learners — biological brains, neural networks, and Rotifer Agents alike — are computationally bounded. Under that constraint, the information content of data decomposes into two distinct quantities: **time-bounded entropy** $H_T(X)$, which captures the residual unpredictability under compute budget $T$, and **epiplexity** $S_T(X)$, which captures the *structural* information that a bounded observer can actually extract.
+
+This distinction grounds the speciation argument in mathematics. Two bindings with different compute budgets see *different* $S_T$ values from the *same* underlying environment — and the genes that succeed in each are precisely those whose structures are extractable within the local budget. The Wrapped → Hybrid → Native fidelity hierarchy, which a casual reader might dismiss as an engineering convenience, turns out to be a layering of *observer classes* indexed by compute capacity. A Native gene encodes structural regularities visible only at high $T$; a Wrapped gene preserves the surface contract while leaving deeper structure outside the observable horizon. The phenotypic divergence celebrated in §2.1 is therefore not noise — it is the inevitable shape that intelligence takes under finite compute.
+
+Three independent intellectual traditions converge on the same conclusion. **Hassabis's natural learnability conjecture** (2024) holds that systems shaped by selection pressures form low-dimensional manifolds that classical learning algorithms can navigate efficiently — extending the argument from biological evolution to physical, chemical, and digital systems alike. **Polanyi's tacit knowledge thesis** (1966), summarized as "we can know more than we can tell," recognizes that knowledge admits irreducibly different encoding depths — a thermometer reading, a written instruction, and an internalized skill differ not merely in fidelity but in *what kind of observer* can use them. **Epiplexity** (2026) formalizes both insights into a single information-theoretic measure: $S_T$ is the encoded structure that a $T$-bounded observer can put to work.
+
+The convergence matters because it tells us the protocol's central design constraint is not arbitrary. Honest protocol design must acknowledge that evolutionary success, learnable structure, and digital speciation are all artifacts of computationally bounded observers — not of idealized rational agents. This is the information-theoretic foundation on which the philosophical claims of Sections 2.1–2.3 rest, and it is one reason the protocol can welcome speciation as a sign of health rather than fear it as a sign of fragmentation.
+
+A more technical treatment of how the protocol's fitness landscape decomposes across observer levels is given in the companion paper *Rotifer Fitness Evolution Chain* (forthcoming), and the practical evaluation framework that operationalizes these distinctions appears in *Rotifer Evaluation Methodology* (forthcoming). For the philosophical reader, the takeaway is simple: the diversity celebrated in §§2.1–2.3 is not noise — it is structure that is real for some observers and absent for others, all at once.
 
 ---
 
@@ -396,6 +415,9 @@ The philosophy of the Rotifer Protocol is the same: rather than pursuing the mos
 - Gladyshev, E. A., Meselson, M., & Arkhipova, I. R. (2008). Massive horizontal gene transfer in bdelloid rotifers. *Science*, 320(5880), 1210-1213.
 - Maynard Smith, J. (1982). *Evolution and the Theory of Games*. Cambridge University Press.
 - Kephart, J. O., & Chess, D. M. (2003). The vision of autonomic computing. *IEEE Computer*, 36(1), 41-50.
+- Polanyi, M. (1966). *The Tacit Dimension*. Doubleday & Company. *(Cited in §2.4 for the "we can know more than we can tell" thesis on tacit knowledge encoding depths.)*
+- Hassabis, D. (2024). *Accelerating Scientific Discovery with AI* — Nobel Prize Lecture, Stockholm, December 8, 2024. *(Cited in §2.4 for the natural learnability conjecture.)*
+- Finzi, M., Qiu, S., Jiang, Y., Izmailov, P., Kolter, J. Z., & Wilson, A. G. (2026). From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence. *arXiv preprint arXiv:2601.03220*. *(Cited in §2.4 for the formal definitions of epiplexity and time-bounded entropy.)*
 
 ---
 
@@ -403,6 +425,8 @@ The philosophy of the Rotifer Protocol is the same: rather than pursuing the mos
 - [Rotifer Protocol Specification](https://github.com/rotifer-protocol/rotifer-spec) — Core Protocol Specification
 - [Architecture Decision Records](https://github.com/rotifer-protocol/rotifer-playground/blob/main/docs/architecture-decisions.md) — Selected public ADRs
 - [From Skill to Gene](./rotifer-gene-vs-skill.md) — Paradigm Comparison between Genes and Skills
+- [Rotifer Fitness Evolution Chain](./rotifer-fitness-evolution-chain.md) *(forthcoming, Phase A Day 4-5)* — Technical treatment of how the fitness landscape decomposes across observer levels (F(g) → F_meta → F_world)
+- [Rotifer Evaluation Methodology](./rotifer-evaluation-methodology.md) *(forthcoming, Phase A Day 6-7)* — Practical 4-dimension × 5-discipline framework for protocol-level evaluation
 
 ---
 

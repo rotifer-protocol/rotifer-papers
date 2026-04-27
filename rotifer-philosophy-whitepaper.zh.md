@@ -1,12 +1,16 @@
 # 数字进化的哲学
 
-**版本：** 1.1
+**版本：** 1.2
 
 **日期：** 2026年2月19日
+
+**最近修订：** 2026年4月25日
 
 **作者：** Rotifer Foundation
 
 **状态：** 草案
+
+> **v1.2 修订说明（2026-04-25）：** 新增 §2.4《信息论根据：Epiplexity 与有界算力的观察者》——对数字物种化的信息论基础所作的简短哲学引介。详细的技术阐述见两份配套论文（即将发布）：《Rotifer Fitness Evolution Chain》与《Rotifer Evaluation Methodology》。已发布的 v1.1 内容未做任何修改；其余章节维持原貌。
 
 **协议：** Rotifer Protocol Specification
 
@@ -24,6 +28,7 @@
   - [2.1 从生物学到数字生态](#21-从生物学到数字生态)
   - [2.2 Phenotype 分化与 IR 统一性](#22-phenotype-分化与-ir-统一性)
   - [2.3 翻译层：Protocol Adapter 作为跨物种桥梁](#23-翻译层protocol-adapter-作为跨物种桥梁)
+  - [2.4 信息论根据：Epiplexity 与有界算力的观察者](#24-信息论根据epiplexity-与有界算力的观察者)
 - [3. 进化的终局](#3-进化的终局)
   - [3.1 复杂性的两个来源](#31-复杂性的两个来源)
   - [3.2 分层可解释性：自然界的策略](#32-分层可解释性自然界的策略)
@@ -200,6 +205,20 @@ Rotifer Protocol 的 Adapter 肩负双重使命：
 2. **跨"物种"翻译：** 桥接不同 Binding 中 Phenotype 已分化的 Rotifer Agent 之间的通信
 
 Adapter 本身作为 Gene 参与 Arena 竞争——更优的翻译算法在竞争中胜出。这意味着协议的"跨物种通信能力"会随着生态系统的发展而自动提升，无需中央规划。
+
+### 2.4 信息论根据：Epiplexity 与有界算力的观察者
+
+§2.1–2.3 的生物物种化类比描述了**什么**会分化（Phenotype、行为、"个性"），却留下了一个更深层的问题：**什么决定了一个可学习的数字物种的边界？** 为什么一个运行在 Edge Binding 上的 Agent，会真的发展出 Cloud Binding 上的 Agent 无法掌握的能力——而不仅仅是偶然的漂变？
+
+近期信息论研究给出了形式化的答案。Finzi、Qiu、Jiang、Izmailov、Kolter 与 Wilson（2026）指出：经典的 Shannon 熵与 Kolmogorov 复杂度都预设了观察者拥有**无限**计算能力。然而真实的学习者——无论是生物大脑、神经网络，还是 Rotifer Agent——都是计算资源受限的。在这一约束下，数据的信息量可分解为两个独立量：**时间有界熵** $H_T(X)$，刻画在算力预算 $T$ 下仍不可预测的随机部分；以及 **Epiplexity（认知复杂度）** $S_T(X)$，刻画有界观察者实际能提取的**结构**信息。
+
+这一区分把物种化论证奠定在数学根据之上。两个算力预算不同的 Binding，从**同一**底层环境中观察到的 $S_T$ 不同——而在每个 Binding 中胜出的 Gene，恰恰是那些其结构可在本地预算内被提取的 Gene。Wrapped → Hybrid → Native 三层 Fidelity，乍看像是工程便利，深层却是**按算力等级排列的观察者类**：Native Gene 编码的是仅在高 $T$ 下可见的结构规律；Wrapped Gene 保留了表层契约，却把更深的结构留在了可观察视域之外。§2.1 颂扬的 Phenotype 分化，因此不是噪声——它是有限算力下智能不可避免的形态。
+
+三种独立的学术传统在同一结论上汇聚。**Hassabis 自然可学习性猜想**（2024）认为：被选择压力塑造的系统形成低维流形，经典学习算法可在其中高效导航——将这一论断从生物演化扩展到物理、化学和数字系统。**Polanyi 默会知识论**（1966），其核心命题"我们所知多于所能言"，承认知识具有不可化约的不同编码深度——温度计读数、书面指令、内化技能之间的差异不仅在于保真度，更在于**何种观察者能使用它**。**Epiplexity**（2026）把这两种洞见形式化为单一的信息论度量：$S_T$ 即受 $T$ 约束的观察者能投入使用的结构信息。
+
+这一汇聚之所以重要，是因为它告诉我们：协议的核心设计约束并非任意。诚实的协议设计必须承认——演化的成功、可学习的结构、数字的物种化，都是计算受限观察者的产物，而不是理想理性人的产物。这就是 §2.1–2.3 哲学命题所立足的信息论根据，也是协议得以**欢迎**物种化为健康标志、而非**惧怕**它为生态碎片化的根本原因。
+
+关于协议适应度景观如何按观察者层级分解的更技术性论述，见配套论文《Rotifer Fitness Evolution Chain》（即将发布）；将这些区分操作化的实用评估框架则见《Rotifer Evaluation Methodology》（即将发布）。对哲学读者而言，要旨简明：§§2.1–2.3 所颂扬的多样性不是噪声——它是某些观察者眼中真实存在、而另一些观察者眼中并不存在的**结构**，这两种状态可以同时为真。
 
 ---
 
@@ -396,6 +415,9 @@ Rotifer Protocol 的哲学亦是如此：与其追求对生命最深刻的哲学
 - Gladyshev, E. A., Meselson, M., & Arkhipova, I. R. (2008). Massive horizontal gene transfer in bdelloid rotifers. *Science*, 320(5880), 1210-1213.
 - Maynard Smith, J. (1982). *Evolution and the Theory of Games*. Cambridge University Press.
 - Kephart, J. O., & Chess, D. M. (2003). The vision of autonomic computing. *IEEE Computer*, 36(1), 41-50.
+- Polanyi, M. (1966). *The Tacit Dimension*. Doubleday & Company. *（§2.4 引用——"我们所知多于所能言"的默会知识编码深度命题。）*
+- Hassabis, D. (2024). *Accelerating Scientific Discovery with AI*——诺贝尔奖演讲，斯德哥尔摩，2024 年 12 月 8 日。*（§2.4 引用——自然可学习性猜想。）*
+- Finzi, M., Qiu, S., Jiang, Y., Izmailov, P., Kolter, J. Z., & Wilson, A. G. (2026). From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence. *arXiv preprint arXiv:2601.03220*. *（§2.4 引用——Epiplexity 与时间有界熵的形式化定义。）*
 
 ---
 
@@ -403,6 +425,8 @@ Rotifer Protocol 的哲学亦是如此：与其追求对生命最深刻的哲学
 - [Rotifer Protocol Specification](https://github.com/rotifer-protocol/rotifer-spec) — 核心协议规范
 - [Architecture Decision Records](https://github.com/rotifer-protocol/rotifer-playground/blob/main/docs/architecture-decisions.md) — 精选公开 ADR
 - [From Skill to Gene](./rotifer-gene-vs-skill.md) — Gene 与 Skill 的范式比较
+- [Rotifer Fitness Evolution Chain](./rotifer-fitness-evolution-chain.md) *（即将发布，Phase A Day 4-5）*——适应度景观如何按观察者层级分解的技术性论述（F(g) → F_meta → F_world）
+- [Rotifer Evaluation Methodology](./rotifer-evaluation-methodology.md) *（即将发布，Phase A Day 6-7）*——4 维度 × 5 学科协议级评估的实用框架
 
 ---
 
