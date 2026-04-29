@@ -1,19 +1,26 @@
-# Rotifer Protocol — The Meta-Protocol for Distributed Intelligence Emergence
+# Where Capability Lives, and How Hardware Earns the Right to Run It
 
-## Where Capability Lives, and How Hardware Earns the Right to Run It
+## A Position Paper on the Meta-Protocol Layer for Distributed Intelligence on Heterogeneous Hardware
 
-**Version:** 1.0
+> **Pre-arXiv Submission Notice**: This paper is released as a public draft so that its methodology and architecture can receive community critique before empirical results are produced. The argument involves protocol mechanisms that are not yet fully implemented (see the "Implementation Status Layering" convention and §8.1); the empirical validation plan (Petri Challenge v1) is in progress. Public release timing should be decided only after external citations and implementation-state claims have been independently verified.
+
+**Version:** 0.1 (Public Draft)
 
 **Date:** April 26, 2026
 
 **Author:** Rotifer Foundation
 
-**Status:** Draft
+**Status:** Public Draft — v1.0 to follow the empirical results of Petri Challenge v1.
+
+**arXiv Category Plan:** cs.DC (primary), cs.CR, cs.AI
+
+**Keywords:** meta-protocol, distributed intelligence, trusted execution environment, edge AI, capability declaration, substrate awareness, installed-base computing
 
 **Protocol:** Rotifer Protocol Specification
 
-**Companion Paper:**
+**Companion Papers:**
 - *The Philosophy of Digital Evolution* (v1.2, 2026) — philosophical grounding
+- *Toward Protocol-Level Evaluation of Distributed AI Agent Evolution* (v0.1, 2026, forthcoming arXiv preprint) — protocol-level evaluation methodology (cs.MA)
 
 **License:** CC BY-SA 4.0
 
@@ -38,13 +45,17 @@
 
 ## Executive Summary
 
-The next decade of AI will not be decided by which model is largest, but by which protocol lets capability live inside hardware. Today, capability lives where it was trained — inside large data centers, behind opaque APIs, in models whose weights cannot be inspected, whose behavior cannot be evolved by anyone except their owners, and whose runtime is divorced from the substrate that has to honor what they claim. The result is a structural mismatch: AI capabilities grow in the cloud, while the trillion devices that already populate the physical world — phones, vehicles, embedded controllers, industrial sensors, smart appliances, edge gateways — are slowly drifting from "possible to upgrade" to "expensive to discard."
+The next decade of AI will not be decided by model size alone. Equally consequential is whether the billions of devices already shipped — sitting in pockets, on factory floors, in vehicles — can credibly host the capabilities the cloud is now growing. Today, capability lives where it was trained — inside large data centers, behind opaque APIs, in models whose weights cannot be inspected, whose behavior cannot be evolved by anyone except their owners, and whose runtime is divorced from the substrate that has to honor what they claim. The result is a structural mismatch: AI capabilities grow in the cloud, while a large installed base of devices in the physical world — phones, vehicles, embedded controllers, industrial sensors, smart appliances, edge gateways — is slowly drifting from "possible to upgrade" to "expensive to discard."
 
-Rotifer Protocol takes a different position. Capabilities should be expressible as transferable, evaluable, evolvable units (Genes), each carrying a structured Phenotype that declares what substrate honors it; protocols should not invent new neural networks but define how existing ones compose, evolve, and remain accountable to their hardware. In the same way HTTP did not invent TCP/IP yet defined how a composable Web could be built on it, Rotifer aims to be the meta-protocol layer on which distributed intelligence — across heterogeneous hardware, across observer classes, across time — can emerge without collapsing into a single vendor.
+Rotifer Protocol takes a different position. Capabilities should be expressible as transferable, evaluable, evolvable units (Genes), each carrying a structured Phenotype that declares what substrate honors it; protocols should not invent new neural networks but define how existing ones compose, evolve, and remain accountable to their hardware. We hypothesize — and welcome public scrutiny — that this protocol layer may be to AI capability what HTTP was to documents: HTTP did not invent TCP/IP, yet it defined how a composable Web could be built on it. How far the analogy holds is an empirical question that will take time to answer; Rotifer aims to be the meta-protocol layer on which distributed intelligence — across heterogeneous hardware, across observer classes, across time — can emerge without collapsing into a single vendor.
 
-This report makes a single argument: **Trusted Execution Environments (TEE) are the physical entry point through which the trillion-device installed base can become first-class nodes of this meta-protocol.** TEE is not one trust backend among others — it is the interface where protocol-level capability declarations meet hardware-level integrity guarantees. When that interface is taken seriously, three things become possible at once: capability promises stop drifting from substrates, old hardware stops being marketing collateral and starts being computational citizens, and intelligence can emerge across observer classes without a single data center being the only honest layer.
+This report makes a single argument: **Trusted Execution Environments (TEE) are a reasonable physical entry point through which the installed base can become first-class nodes of this meta-protocol** — not the only viable path, but the one whose deployment surface most overlaps with consumer-grade hardware today. TEE is the interface where protocol-level capability declarations meet hardware-level integrity guarantees. When that interface is taken seriously, three things become possible at once: capability promises stop drifting from substrates, old hardware stops being marketing collateral and starts being computational citizens, and intelligence can emerge across observer classes without a single data center being the only honest layer.
 
 We do not claim Rotifer Protocol has solved this. We claim that the protocol has been designed for this moment — that its core public mechanisms (Gene, Phenotype, Fidelity, Arena, Imprinting, Adapter) and its open trust-backend architecture are the substrate from which this story can be built, and that the empirical and theoretical foundations are now in place. The rest of this document describes what is already true, what is being engineered, and what remains a research question. The reader is invited to disagree on every page.
+
+---
+
+> **Implementation Status Layering (Key Reading Convention)**: The argument in this report spans three time windows — capabilities verifiable in the public implementation today, protocol layers currently being engineered, and longer-horizon roadmap items. **§8.1 lays out the full three-tier breakdown**; throughout the document, references to the Rotifer Protocol should be read against the "implemented / being engineered / longer-horizon" layering. Descriptions of undelivered features are explicitly marked as "target behavior."
 
 ---
 
@@ -196,7 +207,7 @@ Three properties, taken together, distinguish TEE from the other trust backends 
 
 **Identity rooted in a specific device.** The other trust backends produce identities rooted in keys, certificates, or chain history. TEE-rooted identity is anchored to a particular silicon instance. For a meta-protocol whose unit of participation is a *node* and not just an *account*, this anchoring is exactly the right primitive. It allows the protocol to reason about node-level reputation, node-level participation history, and node-level capability declarations with a degree of accountability that key-rooted systems cannot match.
 
-These three properties are what justify the operational claim of this section. TEE is not the only legitimate trust backend, but it is the trust backend that the meta-protocol specifically needs in order to engage the installed base.
+These three properties together support the operational claim of this section: TEE is not the only legitimate trust backend, but under current installed-base conditions, it is the reasonable first choice for the meta-protocol to engage consumer-grade hardware — an operational trade-off, not an architectural exclusion.
 
 ### 4.4 What TEE Cannot Do Alone
 
@@ -232,7 +243,7 @@ These exclusions are not boilerplate. They are the substrate that the rest of th
 
 In 2024 and 2025, the number that mattered for on-device AI was *can the model fit*. Quantization, distillation, sparse decoding, and a generation of efficient small models eventually made on-device fit into a default rather than an achievement. The interesting number became *how fast*.
 
-For multi-step agent workflows — the kind that involve tool calling, intermediate reasoning, structured output, and several rounds of decision — the threshold has become surprisingly concrete. Public reports for Google's Gemma 3 family indicate decode rates in the range of 7–8 tokens per second on Raspberry Pi 5 CPU for the smaller variants and decode rates in the range of 30+ tokens per second on Qualcomm-class mobile NPUs for the next variant up. These rates are sufficient to support a four-thousand-token input followed by two skill invocations within a wall-clock budget that users will accept as interactive.
+For multi-step agent workflows — the kind that involve tool calling, intermediate reasoning, structured output, and several rounds of decision — the threshold has become surprisingly concrete. Public reports for Google's Gemma 3 family indicate decode rates in the range of 7–8 tokens per second on Raspberry Pi 5 CPU for the smaller variants and decode rates in the range of 30+ tokens per second on Qualcomm-class mobile NPUs for the next variant up (numbers drawn from the Gemma 3 model card and third-party benchmarks on Raspberry Pi 5 / Qualcomm AI Engine; specific figures vary with quantization scheme, precision, and runtime implementation). These rates are sufficient to support a four-thousand-token input followed by two skill invocations within a wall-clock budget that users will accept as interactive.
 
 These are not the rates of cloud-class inference. They are the rates that, for the first time, make complete agent workflows operationally feasible on hardware that already exists in the field.
 
@@ -342,7 +353,9 @@ The capability that uses this structure is not a smaller, dumber version of a cl
 
 Eventually, the user replaces the device. The protocol mechanism that addresses this is the Adapter layer, treating cross-device migration as a form of cross-class translation. Imprinted state from the old device migrates to the new device in a form the new device can honestly run, attested by both endpoints' TEEs.
 
-This is the migration story users already expect. The meta-protocol's contribution is making it work without surrendering the structure to any intermediate party — the protocol does the translation, attestation, and state transfer at the edges, with no requirement that a cloud holds the user's history during the transition.
+This part is currently a draft of the Adapter design with no production implementation — what is described here is **target behavior**, not delivered capability.
+
+The target behavior is: the protocol does the translation, attestation, and state transfer at the edges, with no requirement that a cloud holds the user's history during the transition — the migration story users already expect.
 
 ### 7.5 Carrier and OEM Implications
 
@@ -434,11 +447,15 @@ Rotifer Foundation maintains the protocol's specification, operates a Cloud Bind
 
 The success criterion for the Foundation, paradoxically, is that the protocol becomes important enough for the Foundation itself to be replaceable. The most successful version of this story is one in which other privileged nodes — operated by partners, by communities, by competitors, by entities the Foundation has no relationship with — operate alongside the Foundation's node and the protocol thrives without distinguishing between them.
 
-This is the open-protocol stance. It is the same stance that allowed HTTP to outlast its original commercial supporters and become the substrate for things its inventors never imagined. The meta-protocol layer for distributed intelligence requires the same humility from its originating organization.
+To be explicit: in the early protocol phase, the Foundation continues to carry critical engineering coordination and specification maintenance responsibilities. *"Replaceable"* is a long-term success marker, not a current state.
+
+This is the open-protocol stance — HTTP outlasted its original commercial supporters because the protocol's value migrated away from any single party. The meta-protocol layer for distributed intelligence requires the same humility from its originating organization.
 
 ---
 
 ## 10. Open Questions, Falsifiability, How to Engage
+
+> **Companion Blog Cross-Reference**: This section lists five open questions; readers may also consult the companion blog post *Where Should AI Capability Live?* §10, which articulates a complementary short-list around cross-TEE attestation, Phenotype-versus-behavior divergence, Imprinting migration fidelity, and long-term meta-protocol governance.
 
 ### 10.1 Five Open Questions
 
@@ -502,9 +519,9 @@ The protocol's contribution to distributed intelligence is not a product. It is 
 
 [6] Costan, V., & Devadas, S. (2016). *Intel SGX Explained*. IACR Cryptology ePrint Archive, Report 2016/086.
 
-[7] Finzi, M., Qiu, S., Jiang, Y., Izmailov, P., Kolter, J. Z., & Wilson, A. G. (2026). From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence. *arXiv preprint arXiv:2601.03220*.
+[7] Finzi, M., Qiu, S., Jiang, Y., Izmailov, P., Kolter, J. Z., & Wilson, A. G. (2026). From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence. *arXiv preprint arXiv:2601.03220*. *(Note: cited as an arXiv preprint at time of writing; verify the final arXiv ID and version before public release.)*
 
-[8] Polanyi, M. (1966). *The Tacit Dimension*. University of Chicago Press.
+[8] Polanyi, M. (1966). *The Tacit Dimension*. Doubleday & Company.
 
 [9] Hassabis, D. (2024). *Accelerating Scientific Discovery with AI*. 2024 Nobel Prize Lecture in Chemistry, December 8, 2024. Stockholm, Sweden.
 
