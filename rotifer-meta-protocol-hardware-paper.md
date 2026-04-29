@@ -507,7 +507,7 @@ The protocol's contribution to distributed intelligence is not a product. It is 
 
 ## References
 
-[1] Rotifer Foundation. (2026). *Rotifer Protocol Specification* (Version 2.9). Rotifer Foundation.
+[1] Rotifer Foundation. (2026). *Rotifer Protocol Specification*. Rotifer Foundation.
 
 [2] Rotifer Foundation. (2026). *The Philosophy of Digital Evolution* (v1.2). Rotifer Foundation. CC BY-SA 4.0.
 
