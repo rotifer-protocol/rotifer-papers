@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rotifer-simulations"
+version = "0.9.0-dev"
+description = "Agent-Based Model simulations for Rotifer Protocol economic parameter calibration"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+authors = [{ name = "Rotifer Protocol Authors" }]
+keywords = ["abm", "agent-based-model", "rotifer-protocol", "simulation", "economic"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://rotifer.dev"
+Documentation = "https://rotifer.dev/docs"
+Repository = "https://github.com/rotifer-protocol/rotifer-papers"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+    "--showlocals",
+]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+    "strict_test: Strict-Test per ADR-264 §5 (no mock / no simplification / no fallback / no overfit)",
+    "integration: integration tests touching multi-component flows",
+    "property: hypothesis-based property tests",
+    "slow: tests that take > 5 seconds (deselect with '-m \"not slow\"')",
+]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning:mesa.*",
+]
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]

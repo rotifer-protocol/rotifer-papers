@@ -1,0 +1,18 @@
+# Q2: diversity_factor effectiveness  (Tier 1 — 200 Gene × 50 runs)
+# Sweeps α across plausible regimes; primary metric is HHI.
+
+extends: baseline.yaml
+
+seed: 200
+
+n_runs_per_param: 50
+
+sweep:
+  parameter: alpha
+  values: [0.1, 0.3, 0.5, 0.7, 0.9]
+
+output_dir: reports/q2_diversity/
+metrics_of_interest:
+  - HHI
+  - shannon_diversity
+  - top10_share

@@ -1,0 +1,25 @@
+# Q4: Reputation decay floor stability  (Tier 2 — 500 Gene × 100 runs)
+# Sweeps decay_floor; primary metric is reputation distribution stability over 100 seasons.
+
+extends: baseline.yaml
+
+seed: 400
+
+n_genes: 500
+n_developers: 100
+n_runs_per_param: 100
+
+sweep:
+  parameter: decay_floor
+  values: [0.01, 0.05, 0.10, 0.15, 0.20]
+
+output_dir: reports/q4_decay_stability/
+# Hygiene fix per ADR-281 D6: previous metrics_of_interest names
+# (reputation_variance_long_run / reputation_floor_violations /
+#  active_gene_count_long_run) did not match real ABM output keys,
+# leaving summary.json per_value empty in the C-R12 run (data was
+# still recoverable from results.csv). Replaced with real keys.
+metrics_of_interest:
+  - gini
+  - HHI
+  - shannon_diversity

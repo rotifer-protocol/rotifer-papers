@@ -1,0 +1,121 @@
+{
+  "base_seed": 300,
+  "config": "configs/sweep_q3.yaml",
+  "elapsed_seconds": 3570.375327167014,
+  "metric_keys": [
+    "top10_newcomer_rate",
+    "average_first_publish_to_top10_days",
+    "gini"
+  ],
+  "n_runs_per_param": 50,
+  "parameter": "season_length_days",
+  "per_value": {
+    "120": {
+      "average_first_publish_to_top10_days": {
+        "ci95": 0.0,
+        "mean": 12000.0,
+        "n": 50.0,
+        "std": 0.0
+      },
+      "gini": {
+        "ci95": 0.00023216985017592424,
+        "mean": 0.1305685711861395,
+        "n": 50.0,
+        "std": 0.0008375963032982693
+      },
+      "top10_newcomer_rate": {
+        "ci95": 0.0,
+        "mean": 0.0,
+        "n": 50.0,
+        "std": 0.0
+      }
+    },
+    "180": {
+      "average_first_publish_to_top10_days": {
+        "ci95": 0.0,
+        "mean": 18000.0,
+        "n": 50.0,
+        "std": 0.0
+      },
+      "gini": {
+        "ci95": 0.00021040047508259196,
+        "mean": 0.12450825957399352,
+        "n": 50.0,
+        "std": 0.0007590591974274083
+      },
+      "top10_newcomer_rate": {
+        "ci95": 0.0,
+        "mean": 0.0,
+        "n": 50.0,
+        "std": 0.0
+      }
+    },
+    "30": {
+      "average_first_publish_to_top10_days": {
+        "ci95": 0.0,
+        "mean": 3000.0,
+        "n": 50.0,
+        "std": 0.0
+      },
+      "gini": {
+        "ci95": 0.00041872977200977957,
+        "mean": 0.15812163312109048,
+        "n": 50.0,
+        "std": 0.0015106462309837356
+      },
+      "top10_newcomer_rate": {
+        "ci95": 0.0,
+        "mean": 0.0,
+        "n": 50.0,
+        "std": 0.0
+      }
+    },
+    "60": {
+      "average_first_publish_to_top10_days": {
+        "ci95": 0.0,
+        "mean": 6000.0,
+        "n": 50.0,
+        "std": 0.0
+      },
+      "gini": {
+        "ci95": 0.00037365508953780634,
+        "mean": 0.14290609365446502,
+        "n": 50.0,
+        "std": 0.0013480308552910687
+      },
+      "top10_newcomer_rate": {
+        "ci95": 0.0,
+        "mean": 0.0,
+        "n": 50.0,
+        "std": 0.0
+      }
+    },
+    "90": {
+      "average_first_publish_to_top10_days": {
+        "ci95": 0.0,
+        "mean": 9000.0,
+        "n": 50.0,
+        "std": 0.0
+      },
+      "gini": {
+        "ci95": 0.0002677937714117397,
+        "mean": 0.13547259738729459,
+        "n": 50.0,
+        "std": 0.0009661162843100069
+      },
+      "top10_newcomer_rate": {
+        "ci95": 0.0,
+        "mean": 0.0,
+        "n": 50.0,
+        "std": 0.0
+      }
+    }
+  },
+  "values": [
+    30,
+    60,
+    90,
+    120,
+    180
+  ]
+}

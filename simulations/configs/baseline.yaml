@@ -1,0 +1,39 @@
+# Rotifer ABM — baseline configuration
+# Tier 1 scale per plan v0.9 §3.4 圆桌决议 D-03
+# License: Apache 2.0
+
+seed: 42
+
+# --- Population ---------------------------------------------------------
+n_genes: 200
+n_developers: 50
+
+# --- Time ---------------------------------------------------------------
+n_seasons: 100
+n_steps_per_season: 30        # ~daily granularity inside a 90-day season
+
+# --- diversity_factor ---------------------------------------------------
+# α for (freq/total)^α in get_display_fitness — decision D-02 default
+alpha: 0.5
+
+# --- Reputation ---------------------------------------------------------
+decay_per_month: 0.05
+decay_floor: 0.01             # Q4 candidate values: 0.01 vs 0.20
+
+# --- Season -------------------------------------------------------------
+fitness_retention_rate: 0.5   # half-life when reset_season fires
+
+# --- Newcomer protection ------------------------------------------------
+newcomer_protection_days: 30
+newcomer_bonus_multiplier: 1.5
+
+# --- Developer strategy mix --------------------------------------------
+# Q2.5 — 100% install in baseline; sweep_q2_5.yaml shifts mix to add carr
+developer_strategy_mix:
+  install: 1.0
+  carr: 0.0
+
+# --- Output -------------------------------------------------------------
+output_dir: reports/baseline/
+record_step_metrics: true
+record_season_metrics: true

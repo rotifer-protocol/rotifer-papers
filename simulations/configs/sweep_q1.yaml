@@ -1,0 +1,20 @@
+# Q1: Arena Nash equilibrium for α  (Tier 2 — 500 Gene × 100 runs)
+# Reads baseline.yaml and overrides scale + sweep dimension.
+
+extends: baseline.yaml
+
+seed: 100
+
+n_genes: 500
+n_developers: 100
+n_runs_per_param: 100
+
+sweep:
+  parameter: alpha
+  values: [0.1, 0.3, 0.5, 0.7, 0.9]
+
+output_dir: reports/q1_nash/
+metrics_of_interest:
+  - average_fitness_top10
+  - HHI
+  - shannon_diversity

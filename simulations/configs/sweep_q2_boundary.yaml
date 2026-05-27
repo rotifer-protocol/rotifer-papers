@@ -1,0 +1,30 @@
+# Q2 boundary: ESS existence boundary verification (C-R11)
+#
+# Purpose: closes the loop on Q1 finding (alpha ∈ [0.1, 0.9] showed no
+# differential effect). Q1 verified Spec §33 Thm.33.1 *interior* (alpha>0
+# is sufficient for ESS); this sweep verifies the *boundary* (alpha=0 is
+# where ESS degenerates).
+#
+# Hypothesis: alpha is a switch, not a knob.
+#   - alpha = 0   → diversity_factor ≡ 1 (no diversity dampening, WTA expected)
+#   - alpha > 0   → diversity_factor < 1, equilibrium emerges
+#
+# Includes alpha=0.01 to verify the boundary is at exactly 0, not "very small".
+# Tier 1 scale (matches sibling sweep_q2.yaml) — boundary detection does
+# not need Tier-2 precision once Q1 has nailed the interior.
+
+extends: baseline.yaml
+
+seed: 211
+
+n_runs_per_param: 50
+
+sweep:
+  parameter: alpha
+  values: [0.0, 0.01, 0.1, 0.5, 0.9]
+
+output_dir: reports/q2_boundary/
+metrics_of_interest:
+  - HHI
+  - shannon_diversity
+  - top10_share

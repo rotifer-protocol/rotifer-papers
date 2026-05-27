@@ -1,0 +1,18 @@
+# Q3: Season length and newcomer entry rate  (Tier 1 — 200 Gene × 50 runs)
+# Sweeps season length in days; primary metric is Top-10 newcomer rate.
+
+extends: baseline.yaml
+
+seed: 300
+
+n_runs_per_param: 50
+
+sweep:
+  parameter: season_length_days
+  values: [30, 60, 90, 120, 180]
+
+output_dir: reports/q3_season_length/
+metrics_of_interest:
+  - top10_newcomer_rate
+  - average_first_publish_to_top10_days
+  - gini
