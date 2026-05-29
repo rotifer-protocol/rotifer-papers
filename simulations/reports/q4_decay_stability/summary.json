@@ -1,5 +1,5 @@
 {
-  "_note": "summary.json regenerated 2026-05-19 from existing results.csv after sweep_q4.yaml metrics_of_interest hygiene fix (ADR-281 D6). Original C-R12 run produced empty per_value because YAML had fictional metric names; raw data was preserved in results.csv. No new sweep was run.",
+  "_note": "summary.json regenerated 2026-05-19 from existing results.csv after sweep_q4.yaml metrics_of_interest hygiene fix. Original C-R12 run produced empty per_value because YAML had fictional metric names; raw data was preserved in results.csv. No new sweep was run.",
   "base_seed": 400,
   "config": "configs/sweep_q4.yaml",
   "elapsed_seconds": 13552.263225083007,

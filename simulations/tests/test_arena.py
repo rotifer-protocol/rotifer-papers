@@ -38,7 +38,7 @@ def test_C_4_1_pair_count_odd() -> None:
 # C.4.2 — update_scores: win +0.1, loss -0.05
 # ---------------------------------------------------------------------------
 def test_C_4_2_update_scores_default_deltas() -> None:
-    """C.4.2 — winner +0.1, loser -0.05 (ADR-215)."""
+    """C.4.2 — winner +0.1, loser -0.05."""
     from src.arena import update_scores
 
     result = update_scores(("g-a", "g-b"))

@@ -21,7 +21,7 @@ import mesa
 from .gene_agent import GeneAgent
 
 INSTALL_COST = 1.0
-CARR_COST_MULTIPLIER = 3.0  # ADR-260 C3 — Carr training is 3× baseline cost.
+CARR_COST_MULTIPLIER = 3.0  # Carr training is 3× baseline cost.
 
 CARR_FITNESS_LOW = 0.7
 CARR_FITNESS_HIGH = 1.3
@@ -44,7 +44,7 @@ class Strategy(str, Enum):
     """Developer publication strategy.
 
     - INSTALL : standard publish; fitness = clamp(base, [0, 1]); cost = 1.0.
-    - CARR    : Carr training (ADR-260 C3) — fitness = base × U(0.7, 1.3); cost = 3.0.
+    - CARR    : Carr training — fitness = base × U(0.7, 1.3); cost = 3.0.
     """
 
     INSTALL = "install"
@@ -128,7 +128,7 @@ class DeveloperAgent(mesa.Agent):
             INSTALL : fitness = clamp(base_fitness, [0, 1]),  publish_cost = 1.0
             CARR    : fitness = base_fitness × U(0.7, 1.3),    publish_cost = 3.0
 
-        ADR-260 C3 invariant: Carr fitness is bounded *relative to base*
+        Invariant: Carr fitness is bounded *relative to base*
         (`[base × 0.7, base × 1.3]`) but is **not** clamped to [0, 1] — for
         large base, ``base × 1.3`` may exceed 1, which is acceptable per spec
         (and why the property test caps base at 0.9). The Arena later clamps

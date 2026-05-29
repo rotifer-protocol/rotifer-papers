@@ -9,7 +9,7 @@
 
 ---
 
-## ⚠️ Amendment (2026-05-19) — ADR-281 D5 Cross-Reference
+## ⚠️ Amendment (2026-05-19)
 
 This report's original conclusion ("α=0.5 is the empirical optimum") was based on a 5-α HHI range of ≈ 0.012, which sits **inside** the within-α std (0.024-0.033). Subsequent sweeps refute this:
 
@@ -19,12 +19,12 @@ This report's original conclusion ("α=0.5 is the empirical optimum") was based 
 
 This R8 result is a textbook **spurious-precision** instance. The original ranking should be read as noise, not signal.
 
-**Per ADR-281 D5**:
+**Amended conclusion**:
 - α=0.5 should be referred to as the **protocol default value** (matches Spec §33 ESS midpoint), **not** as "empirical optimum"
 - Cloud / Spec defaults remain unchanged (α=0.5, decay_floor=0.01) — no ABM evidence yet exists to support changing them
 - Re-test will run after E1 (v1.0 §4.5.X per D-04) lands and produces a non-trivial top10_share
 
-See ADR-281 (vestigial parameters & model-realization gap) for the full meta-finding and 6 decisions.
+These findings are part of the broader *vestigial parameters & model-realization gap* meta-analysis spanning the Q1/Q2/Q4 sweeps.
 
 ---
 

@@ -23,7 +23,7 @@ REPUTATION_MAX = 1.0
 
 @dataclass(frozen=True)
 class ReputationWeights:
-    """ADR-157 — α, β, γ parameter triple."""
+    """α, β, γ parameter triple."""
 
     fitness: float = DEFAULT_FITNESS_WEIGHT
     consistency: float = DEFAULT_CONSISTENCY_WEIGHT

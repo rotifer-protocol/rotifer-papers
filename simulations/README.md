@@ -67,7 +67,7 @@ pytest
 # Only unit (skip integration / slow)
 pytest -m "not integration and not slow"
 
-# Only Strict-Test cases (per ADR-264 §5)
+# Only Strict-Test cases
 pytest -m strict_test
 
 # Property-based tests with verbose hypothesis output
@@ -85,7 +85,7 @@ pytest --cov=src --cov-report=html
 | Q2 | `diversity_factor` — does usage_diversity × path_diversity prevent winner-take-all? | Tier 1 (200 Gene × 50 runs) | stage 2 |
 | Q3 | Season length (30/60/90/120/180 days) — newcomer entry rate? | Tier 1 (200 Gene × 50 runs) | stage 2 |
 | Q4 | Reputation decay floor (0.01 vs 0.20) — long-run stability? | Tier 2 (500 Gene × 100 runs) | stage 3 |
-| Q2.5 | Carr vs install strategies (ADR-260 C3) — adaptive value? | Tier 1 | stage 3 |
+| Q2.5 | Carr vs install strategies — adaptive value? | Tier 1 | stage 3 |
 
 > **Tier 3 (academic-grade, 2000 Gene × 1000 runs)** is deferred to v1.0+ paper publication.
 
@@ -97,7 +97,7 @@ pytest --cov=src --cov-report=html
 
 ## 6. Cross-implementation consistency
 
-Some components mirror Cloud SQL (Supabase) logic and **must** stay byte-equivalent:
+Some components mirror Cloud SQL logic and **must** stay byte-equivalent:
 
 | Python | SQL counterpart | Strict-Test ID |
 |---|---|---|
@@ -107,9 +107,9 @@ Some components mirror Cloud SQL (Supabase) logic and **must** stay byte-equival
 
 Cross-implementation parity is **deferred to stage 2** — stage 1 only marks the test scaffold (`@pytest.mark.skip(reason="awaiting Cloud impl")`).
 
-## 7. Sweep engineering practice (per ADR-281 D3 + D6)
+## 7. Sweep engineering practice
 
-Established 2026-05-19 after the v0.9 §3.4 Stage-3 sweeps (C-R10 / R11 / R12, 1250 ABM runs total) revealed two failure modes that future sweeps **must** prevent up front. See ADR-281 (vestigial parameters & model-realization gap) for the full meta-finding.
+Established 2026-05-19 after the v0.9 §3.4 Stage-3 sweeps (C-R10 / R11 / R12, 1250 ABM runs total) revealed two failure modes that future sweeps **must** prevent up front — the *vestigial parameters* and *model-realization gap* findings.
 
 ### 7.1 Mechanism-engagement check (D3) — pre-sweep gate
 
@@ -145,7 +145,7 @@ jq '.per_value | to_entries | map(.value | length)' reports/qX_*/summary.json
 git add configs/sweep_qX.yaml
 ```
 
-A real-world example of this hygiene failure is the C-R12 Q4 sweep (`configs/sweep_q4.yaml`, fixed 2026-05-19) — `metrics_of_interest` declared three fictional column names (`reputation_variance_long_run` / `reputation_floor_violations` / `active_gene_count_long_run`) that did not exist in the model output. Per ADR-281 D6 the file now uses `gini` / `HHI` / `shannon_diversity` (real keys).
+A real-world example of this hygiene failure is the C-R12 Q4 sweep (`configs/sweep_q4.yaml`, fixed 2026-05-19) — `metrics_of_interest` declared three fictional column names (`reputation_variance_long_run` / `reputation_floor_violations` / `active_gene_count_long_run`) that did not exist in the model output. The file now uses `gini` / `HHI` / `shannon_diversity` (real keys).
 
 ### 7.3 Audit trail
 
@@ -161,9 +161,6 @@ Reports for vestigial parameters are still valuable — they are diagnostic sign
 
 - **Plan**: Rotifer Protocol v0.9 Plan §3.4
 - **Vision Roadmap**: §5.6 (economic system)
-- **ADR-035**: ABM simulation strategy
-- **ADR-260 C3 / C6**: Carr training × adaptive exploration
-- **ADR-281**: Vestigial parameters & model-realization gap
 
 ## 9. License
 

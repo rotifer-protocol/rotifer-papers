@@ -55,7 +55,7 @@ def update_scores(
 ) -> BattleResult:
     """Apply Arena score update.
 
-    Defaults follow ADR-215 (`win +0.1`, `loss -0.05`).
+    Defaults are `win +0.1`, `loss -0.05`.
 
     The `winner_idx` (0 or 1) lets callers inject Fitness-based winner
     selection; default 0 keeps the function pure / deterministic for

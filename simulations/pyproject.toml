@@ -39,7 +39,7 @@ addopts = [
 testpaths = ["tests"]
 pythonpath = ["src"]
 markers = [
-    "strict_test: Strict-Test per ADR-264 §5 (no mock / no simplification / no fallback / no overfit)",
+    "strict_test: Strict-Test (no mock / no simplification / no fallback / no overfit)",
     "integration: integration tests touching multi-component flows",
     "property: hypothesis-based property tests",
     "slow: tests that take > 5 seconds (deselect with '-m \"not slow\"')",
