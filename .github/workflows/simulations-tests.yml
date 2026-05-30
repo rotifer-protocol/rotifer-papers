@@ -1,0 +1,44 @@
+name: Simulations Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "simulations/**"
+      - ".github/workflows/simulations-tests.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "simulations/**"
+      - ".github/workflows/simulations-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    name: ABM Test Suite
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    defaults:
+      run:
+        working-directory: simulations
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: simulations/requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run test suite (fast tier)
+        # Slow sweeps (-m slow) run for hours and are excluded from CI.
+        # 2 skips are expected in CI: Rust napi bridge + Postgres client absent.
+        run: pytest -q -m "not slow"
