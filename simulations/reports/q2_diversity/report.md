@@ -76,7 +76,7 @@ diversity_factor (display-layer mirror of get_display_fitness SQL)
 ## 3. Results
 
 > **Sweep complete**: 250 runs (5 α × 50 runs), wall-clock 52.8 min.
-> **Sweep log**: [`sweep.log`](./sweep.log) · **Raw**: [`results.csv`](./results.csv) · **Aggregate**: [`summary.json`](./summary.json) · **Notebook**: [`q2_diversity_factor.ipynb`](../../notebooks/q2_diversity_factor.ipynb)
+> **Sweep log**: `sweep.log` (local artifact, gitignored) · **Raw**: [`results.csv`](./results.csv) · **Aggregate**: [`summary.json`](./summary.json) · **Notebook**: [`q2_diversity_factor.ipynb`](../../notebooks/q2_diversity_factor.ipynb)
 
 ### 3.1 HHI vs α
 
