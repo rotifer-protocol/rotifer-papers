@@ -166,7 +166,7 @@ The acceptance criterion ("HHI significantly lower than no-diversity_factor cont
 ## 5. Limitations & follow-up
 
 - **α only affects display layer**: Arena winner selection uses raw fitness, not display fitness. Future ABM enhancement could route `compute_fitness × diversity_factor(α)` into `_run_arena_round` to test α's effect on dynamics directly. **Out of scope for Q2** (matches plan §3.2 design); flagged for v1.0+ ABM expansion (recorded as a deferred enhancement, see §6 below).
-- **Tier 1 scale (200 initial Genes, 100 seasons)**: spec-internal §9.2 academic Tier (1000-10000 Agent, 1000 runs) deferred to paper publication phase.
+- **Tier 1 scale (200 initial Genes, 100 seasons)**: the larger academic Tier (1000-10000 Agent, 1000 runs) is deferred to the paper publication phase.
 - **n_genes_final ≈ 5000+**: 50 Developers × 1/30 publish prob × 3000 steps ≈ 5000 new Genes overlay the initial 200, dominating the final distribution. Q2.6 Conjectured-Gene weight decay (planned C-R12) will study this dynamic explicitly.
 - **No `seed` axis**: deterministic seed sequencing means each (α, run_idx) pair has a unique seed, but seed values themselves are not a sweep axis. Replication on a different machine should produce identical CSV rows.
 
