@@ -41,7 +41,7 @@ This repository follows a deliberately small two-tier model:
 
 The frontmatter `status:` field in each article (e.g. `Draft`, `Published`, `Stable`) is an author-declared label for human readers. It does **not** bypass the mechanical publication gate.
 
-> See `internal/adr/270-rotifer-papers-tiering-and-publication-gate.md` for the rationale (private to the project workspace).
+> The tiering rationale is maintained privately in the project workspace.
 
 ## Publication Gate
 
