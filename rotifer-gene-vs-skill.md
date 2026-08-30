@@ -245,7 +245,7 @@ The Rotifer Protocol does not aim to "kill" LangChain, MCP, or CrewAI. Quite the
 
 ## Conclusion: The Logic of Life
 
-40 million years ago, the bdelloid rotifer faced a seemingly impossible challenge: maintaining genetic diversity as a species without sexual reproduction. Its answer was not "design a better gene management system" — but to make genes themselves fluid, competitive, and adaptive.
+Tens of millions of years ago, the bdelloid rotifer faced a seemingly impossible challenge: maintaining genetic diversity as a species with almost no sexual reproduction. Its answer was not "design a better gene management system" — but to make genes themselves fluid, competitive, and adaptive.
 
 Today's AI Agent ecosystem faces the same challenge: maintaining capability diversity and adaptability in a rapidly changing environment. The current answer — Agent Skills — is a correct beginning, but it stalls at the "modularization" step.
 

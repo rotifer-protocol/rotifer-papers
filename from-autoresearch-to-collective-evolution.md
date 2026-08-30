@@ -58,9 +58,9 @@ In biological evolution before horizontal gene transfer, every organism had to i
 
 ---
 
-## 3. What Rotifers Figured Out 40 Million Years Ago
+## 3. What Rotifers Figured Out
 
-Bdelloid rotifers (*Rotifera: Bdelloidea*) are microscopic freshwater invertebrates that have reproduced exclusively asexually for approximately 40 million years. By conventional evolutionary theory, this should be catastrophic — asexual reproduction leads to Muller's ratchet (irreversible accumulation of deleterious mutations) and vulnerability to co-evolving parasites (the Red Queen hypothesis).
+Bdelloid rotifers (*Rotifera: Bdelloidea*) are microscopic freshwater invertebrates that have gone tens of millions of years with little or no sexual reproduction. (How strictly asexual they have been is contested — recent molecular work has found signatures that argue against total abstinence — so treat the purity of the claim, not the scale of it, as the open question.) By conventional evolutionary theory, even mostly-asexual lineages should struggle: asexual reproduction leads to Muller's ratchet (irreversible accumulation of deleterious mutations) and vulnerability to co-evolving parasites (the Red Queen hypothesis).
 
 Instead, bdelloids are among the most resilient animals on Earth. Their secret: **horizontal gene transfer** (HGT). During desiccation-induced DNA damage and repair, rotifers incorporate genetic material from other species — fungi, bacteria, and even plants — directly into their genomes. Up to 8-10% of their expressed genes are of non-metazoan origin, representing the most extensive case of HGT documented in any animal lineage.
 
@@ -70,7 +70,7 @@ The key properties of rotifer HGT:
 - **Fitness-proportional adoption** — genes that improve survival are retained; neutral or harmful acquisitions are selected against
 - **Cross-species transfer** — the source of a useful gene is irrelevant; what matters is whether it works
 
-The result: 40 million years of resilience, diversity, and adaptation — without sexual reproduction, without central planning, without gatekeeping.
+The result is resilience, diversity, and adaptation on a timescale of tens of millions of years — with no central planning and no gatekeeping. Whatever the final verdict on how much sex bdelloids have, the scale of their gene borrowing is not in dispute, and that is the mechanism this protocol borrows from.
 
 ---
 
