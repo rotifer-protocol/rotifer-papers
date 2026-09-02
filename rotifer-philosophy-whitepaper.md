@@ -181,7 +181,7 @@ There are approximately 8.7 million species on Earth. This is not a diversity ca
 
 Yet there is one line that speciation must not cross.
 
-In biology, all known life forms share a single genetic encoding standard—DNA's four-base code (A-T-C-G) and the nearly universal codon table. The unity of this underlying encoding standard makes **horizontal gene transfer** possible—bdelloid rotifers have survived 40 million years without sexual reproduction precisely through this mechanism, acquiring genes from other species.
+In biology, all known life forms share a single genetic encoding standard—DNA's four-base code (A-T-C-G) and the nearly universal codon table. The unity of this underlying encoding standard makes **horizontal gene transfer** possible—bdelloid rotifers have come through tens of millions of years on very little sexual reproduction precisely through this mechanism, acquiring genes from other species.
 
 The Rotifer Protocol's **Rotifer IR** is this "universal genetic code."
 
@@ -397,7 +397,7 @@ Specifically:
 4. **Governance Philosophy:** The protocol defines infrastructure standards; bindings implement specific compliance—consistent with the layered principles of the internet.
 5. **Ethical Gradualism:** Autonomy Levels (L0–L4) drive graduated ethical escalation, with a framework built for the future.
 
-The protocol is named after the bdelloid rotifer, a microscopic animal that has survived 40 million years of asexual reproduction through horizontal gene transfer and cryptobiosis. It is neither the most intelligent nor the most powerful—but it is the most tenacious.
+The protocol is named after the bdelloid rotifer, a microscopic animal that has come through tens of millions of years on very little sex, by way of horizontal gene transfer and cryptobiosis. It is neither the most intelligent nor the most powerful—but it is the most tenacious.
 
 The philosophy of the Rotifer Protocol is the same: rather than pursuing the most profound philosophical definition of life, it builds a framework flexible enough, honest enough, and future-oriented enough—to let software, in an uncertain world, evolve its own path to survival, just as the rotifer has.
 
