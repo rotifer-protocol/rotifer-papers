@@ -81,11 +81,13 @@ The parallel between autoresearch and the Rotifer Protocol is not designed — i
 | autoresearch | Rotifer Protocol | Shared Principle |
 |-------------|-----------------|-----------------|
 | `train.py` | Gene | The mutable unit — atomic, self-contained logic |
-| `val_bpb` | F(g) = (S_r × log(1+C_util) × (1+R_rob)) / (L × R_cost) | Quantified fitness — selection pressure |
+| `val_bpb` | F(g) = S_r × log₂(1+C_util) × (1+R_rob)/2 × L_score × Cost_score | Quantified fitness — selection pressure |
 | `program.md` | L0 Kernel | Immutable constraints — constitutional layer |
 | 5-minute time budget | Arena | Standardized evaluation environment |
 | Fork | Agent | Independent evolutionary entity |
 | Experiment log | Gene lineage + version history | Evolutionary record |
+
+*Updated 2026-10: the fitness formula above reflects the revised protocol spec; earlier versions divided by raw latency × cost. Here L_score = 1/(1 + L/L_ref) and Cost_score = 1/(1 + Cost/Cost_ref), where L_ref and Cost_ref are the season medians of genes with the same domain and fidelity.*
 
 The convergence validates a claim: **the triadic structure (mutable unit + fitness function + constraint layer) is the universal minimal architecture for computational evolution.**
 

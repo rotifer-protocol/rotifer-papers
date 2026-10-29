@@ -81,11 +81,13 @@ autoresearch 与 Rotifer Protocol 之间的平行关系不是设计出来的—�
 | autoresearch | Rotifer Protocol | 共享原理 |
 |-------------|-----------------|---------|
 | `train.py` | Gene | 可变异单元——原子化、自包含的逻辑 |
-| `val_bpb` | F(g) = (S_r × log(1+C_util) × (1+R_rob)) / (L × R_cost) | 量化适应度——选择压力 |
+| `val_bpb` | F(g) = S_r × log₂(1+C_util) × (1+R_rob)/2 × L_score × Cost_score | 量化适应度——选择压力 |
 | `program.md` | L0 Kernel | 不可变约束——宪法层 |
 | 5 分钟时间预算 | Arena | 标准化评估环境 |
 | Fork | Agent | 独立进化实体 |
 | 实验日志 | Gene 谱系 + 版本历史 | 进化记录 |
+
+*2026-10 更新：上式为协议规范修订后的形式；早期版本是直接除以原始延迟 × 成本。其中 L_score = 1/(1 + L/L_ref)，Cost_score = 1/(1 + Cost/Cost_ref)，L_ref、Cost_ref 是同领域、同 fidelity 基因在本赛季的中位数。*
 
 这种收敛验证了一个论断：**三元结构（可变异单元 + 适应度函数 + 约束层）是计算进化的普遍最小架构。**
 
